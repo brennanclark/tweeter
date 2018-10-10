@@ -1,0 +1,111 @@
+
+/*---------------------------------ARTICLE--------------------------------------*/
+.tweet-container article {
+
+  margin-top: 30px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #cccccc;
+
+}
+
+.tweet-container:hover article {
+
+  border-color: black;
+}
+
+
+/*---------------------------------HEADER--------------------------------------*/
+/*The header when there is no hover is the default appearance.*/
+.tweet-container header {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #eeeeee;
+  padding: 1px;
+  height: 70px;
+  padding: 10px;
+  opacity: 0.8;
+}
+
+
+.tweet-container:hover article header  {
+  opacity: 1;
+
+}
+
+.tweet-container header .avatar {
+  border-radius: 5px;
+  float: left;
+  background-color: grey;
+  width: 50px;
+  height: 50px;
+
+}
+
+.tweet-container header h2 {
+  display: inline-block;
+  margin: 0px;
+  margin-left: 11px;
+}
+
+.tweet-container header a {
+  margin-top: 5px;
+  float: right;
+}
+
+/*---------------------------------MAIN--------------------------------------*/
+.tweet-container main {
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-bottom: 25px;
+    padding-right: 15px;
+}
+
+/*---------------------------------FOOTER--------------------------------------*/
+.tweet-container footer {
+
+  padding-right: 7px;
+  padding-left: 7px;
+  border-top: 1px solid ;
+  border-color: #cccccc;
+}
+
+.tweet-container article footer p {
+  display: inline-block;
+}
+
+.tweet-container article footer .social-buttons {
+  margin: 7px;
+  float: right;
+  opacity: 0;
+}
+
+.tweet-container article footer .social-buttons i {
+  cursor: pointer;
+  margin: 3px;
+}
+
+.tweet-container:hover article .social-buttons {
+  opacity: 1;
+}
+
+.tweet-container footer p {
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
