@@ -25,8 +25,18 @@
 
 }
 
-.counter {
+.new-tweet #twetText{
+  overflow-wrap: normal;
+}
+
+.new-tweet .counter {
 
   float: right;
 
+}
+
+.error{
+  display: inline-block;
+  display: none;
+  color: red;
 }

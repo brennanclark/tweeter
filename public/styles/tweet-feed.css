@@ -61,6 +61,10 @@
   padding-right: 15px;
 }
 
+.tweet-container main p {
+  overflow-wrap: break-word;
+}
+
 /*---------------------------------FOOTER--------------------------------------*/
 .tweet-container footer {
 

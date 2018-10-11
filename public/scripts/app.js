@@ -13,6 +13,20 @@ $(document).ready(function() {
     return $('<i></i>').addClass(className);
   }
 
+  function postTweet (data){
+    $.ajax({
+          method: 'POST',
+          data: data,
+          url: '/tweets',
+          success: function(result){
+            loadTweets();
+          },
+          error: function(err){
+            console.log('error');
+          }
+        })
+  }
+
 
   function createTweetElement({ user: { avatars, name, handle }, content, created_at }) {
     const $tweet         = $("<article class='tweet'>");
@@ -33,7 +47,6 @@ $(document).ready(function() {
   }
 
   function renderTweets(tweets) {
-    console.log(tweets.length);
     $('.tweet-container').empty();
     tweets.forEach(function (tweet){
       createTweetElement(tweet).prependTo('.tweet-container');
@@ -54,27 +67,33 @@ $(document).ready(function() {
     })
   }
 
-
     $('#tweetform').on('submit', function () {
       event.preventDefault();
       let data = $('#tweetform').serialize();
       let userText = data.replace("text=","");
+      let $error = $('.error')
 
-      if (userText.length === 0 || userText.length > 140 ){
-        alert("sorry. need to fix")
-      } else{
-        $.ajax({
-          method: 'POST',
-          data: data,
-          url: '/tweets',
-          success: function(result){
-            loadTweets();
-          },
-          error: function(err){
-            console.log('error');
-          }
-        })
+      if (userText.length === 0) {
+        if($error.text() !== 'Tweet too short'){
+          $error.slideUp(function(){
+            $error.text('Tweet too short').slideDown();
+          })
+        }
+        return;
       }
+      if (userText.length > 140 ) {
+        if ($error.text() !== 'Tweet too long') {
+          $error.slideUp(function(){
+            $error.text('Tweet too long').slideDown();
+          });
+
+        }
+
+        return;
+      }
+
+      $error.slideUp();
+      postTweet(data);
     });
 
   loadTweets();
