@@ -48,18 +48,44 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/" >
+        <form method="POST" action="/tweets/" id="tweetform">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
-      <section class="tweet-container">
-
-
-        </section>
-
+      <!-- Tweet Timeline -->
+      <section class="tweet-container"></section>
     </main>
-
   </body>
+  <script>
+  $(function() {
+
+
+
+    $('#tweetform').on('submit', function () {
+      event.preventDefault();
+      console.log($('#tweetform').serialize());
+      let data = $('#tweetform').serialize();
+      let userText = data.replace("text=","");
+
+      if (userText.length === 0 || userText.length > 140){
+        alert("FIX YO TWEET");
+      } else {
+
+        $.ajax({
+          method: 'POST',
+          data: data,
+          url: '/tweets',
+          success: function(result){
+            console.log('success');
+          },
+          error: function(err){
+            console.log('error');
+          }
+        })
+      }
+    })
+  })
+  </script>
 </html>
