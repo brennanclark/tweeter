@@ -9,7 +9,7 @@
 
 }
 
-.tweet-container:hover article {
+.tweet-container article:hover {
 
   border-color: black;
 }
@@ -28,7 +28,7 @@
 }
 
 
-.tweet-container:hover article header  {
+.tweet-container article:hover header  {
   opacity: 1;
 
 }
@@ -85,7 +85,7 @@
   margin: 3px;
 }
 
-.tweet-container:hover article .social-buttons {
+.tweet-container article:hover .social-buttons {
   opacity: 1;
 }
 
