@@ -33,12 +33,15 @@ $(document).ready(function() {
   }
 
   function renderTweets(tweets) {
+    console.log(tweets.length);
+    $('.tweet-container').empty();
     tweets.forEach(function (tweet){
-      createTweetElement(tweet).appendTo('.tweet-container');
+      createTweetElement(tweet).prependTo('.tweet-container');
     });
   }
 
   function loadTweets(){
+
     $.ajax({
       method: 'GET',
       url: '/tweets',
@@ -50,6 +53,31 @@ $(document).ready(function() {
       }
     })
   }
+
+
+    $('#tweetform').on('submit', function () {
+      event.preventDefault();
+      console.log($('#tweetform').serialize());
+      let data = $('#tweetform').serialize();
+      let userText = data.replace("text=","");
+
+      if (userText.length === 0 || userText.length > 140 ){
+        alert("sorry. need to fix")
+      } else{
+        $.ajax({
+          method: 'POST',
+          data: data,
+          url: '/tweets',
+          success: function(result){
+            loadTweets();
+          },
+          error: function(err){
+            console.log('error');
+          }
+        })
+      }
+    });
+
   loadTweets();
 
 });
