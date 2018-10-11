@@ -57,7 +57,6 @@ $(document).ready(function() {
 
     $('#tweetform').on('submit', function () {
       event.preventDefault();
-      console.log($('#tweetform').serialize());
       let data = $('#tweetform').serialize();
       let userText = data.replace("text=","");
 
@@ -80,6 +79,19 @@ $(document).ready(function() {
 
   loadTweets();
 
+  $('.compose').on('click', function() {
+    let body = $('html, body');
+    let tweetContainer = $('.tweet-container').offset().top;
+    let navBarHeight = $('#nav-bar').height();
+
+    if (body.scrollTop() === 0){
+      body.stop().animate({scrollTop: tweetContainer - navBarHeight}, 200, 'swing')
+    } else {
+      body.stop().animate({scrollTop: 0}, 200, 'swing', function() {
+        $('#tweetText').focus();
+      })
+    }
+  })
 });
 
 

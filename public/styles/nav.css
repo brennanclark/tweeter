@@ -41,10 +41,16 @@
   border: 1px solid;
   border-color: black;
   font-size: 20px;
+  opacity: 0.9;
+}
+
+#nav-bar .compose:hover{
+  opacity: 1;
 }
 
 #nav-bar .compose:focus {
   color: black;
   outline: 0;
+  opacity: 1;
 
 }
