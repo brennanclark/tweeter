@@ -28,3 +28,23 @@
   font-size: 2em;
 
 }
+
+#nav-bar .compose {
+
+  float: right;
+  margin: 14px;
+  background-color: #fff;
+  color: #00a087;
+  width: 118px;
+  height: 52px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: black;
+  font-size: 20px;
+}
+
+#nav-bar .compose:focus {
+  color: black;
+  outline: 0;
+
+}
