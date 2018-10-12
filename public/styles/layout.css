@@ -9,19 +9,13 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
-
+/*Sets the default font to Robo Condensed and sets up the main container*/
 body {
   margin: 0;
   color: #244751;
   background-color: #eee;
   font-family: 'Roboto Condensed', sans-serif;
 }
-
-
 main.container {
 
   padding: 2em;
@@ -30,9 +24,4 @@ main.container {
 
   margin: 0 auto;
   background-color: #FFFFFF;
-
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

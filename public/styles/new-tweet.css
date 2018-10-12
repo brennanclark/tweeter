@@ -1,5 +1,4 @@
 .new-tweet {
-
   border-radius: 5px;
   background-color: #eeeeee;
   padding-right: 1em;
@@ -7,28 +6,21 @@
 }
 
 .new-tweet form {
-
   padding-bottom: 10px;
 }
 
 .new-tweet h2 {
-
   padding-top: 10px;
   border-bottom: 1px solid;
-
 }
 
 .new-tweet textarea {
-
   width: 100%;
   padding:5px;
-
 }
 
 .new-tweet .counter {
-
   float: right;
-
 }
 
 .error{

@@ -1,5 +1,4 @@
 #nav-bar {
-
   position: fixed;
   height: 80px;
   width: 100%;
@@ -9,28 +8,22 @@
   padding-right: 2em;
   float: left;
   z-index: 7;
-
 }
 
 #nav-bar .logo {
-
   height: 80px;
   width: 80px;
   float: left;
-
 }
 
 #nav-bar .header {
-
   float: left;
   padding-left: 10px;
   padding-top: 20px;
   font-size: 2em;
-
 }
 
 #nav-bar .compose {
-
   float: right;
   margin: 14px;
   background-color: #fff;
@@ -52,5 +45,4 @@
   color: black;
   outline: 0;
   opacity: 1;
-
 }
