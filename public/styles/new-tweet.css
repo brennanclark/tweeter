@@ -25,10 +25,6 @@
 
 }
 
-.new-tweet #twetText{
-  overflow-wrap: normal;
-}
-
 .new-tweet .counter {
 
   float: right;

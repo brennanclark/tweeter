@@ -54,7 +54,6 @@ $(document).ready(function() {
   }
 
   function loadTweets(){
-
     $.ajax({
       method: 'GET',
       url: '/tweets',
